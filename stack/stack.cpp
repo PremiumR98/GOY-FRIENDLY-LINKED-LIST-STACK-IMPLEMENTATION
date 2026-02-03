@@ -1,4 +1,6 @@
 ﻿#include "mystack.h"
+#include <random>
+#include <fstream>
 
 int main()
 {
@@ -11,6 +13,18 @@ int main()
 
 	int counter = 1;
 	node* temp;
+
+	int stk_size;
+	int rand_min;
+	int rand_max;
+
+	random_device rd;
+	mt19937 gen(rd());
+	uniform_int_distribution<> distr;
+
+	string file_name;
+	ofstream save_file;
+	ifstream load_file;
 
 	while (menu_var != 4)
 	{
