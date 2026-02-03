@@ -74,6 +74,8 @@ node_it mystack::get_it_next(node_it curr_it) {
 	if (curr_it->next != NULL) {
 		return curr_it->next;
 	}
+	else
+		return NULL;
 }
 
 int mystack::get_it_val(node_it curr_it) {
