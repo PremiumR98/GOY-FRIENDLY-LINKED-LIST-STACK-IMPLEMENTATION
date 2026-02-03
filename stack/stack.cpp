@@ -73,22 +73,62 @@ int main()
 				stk.get_it_val(stk.get_it_first());
 			}
 		case 31:
+			if (stk.get_it_top() == NULL) {
+				break;
+			}
 			cout << " Введите нужный элемент стэка: ";
 			cin >> data;
 			cout << "\n";
 			temp = stk.get_it_top();
 			while (temp->data != data) {
-				temp = temp->next;
+				temp = stk.get_it_next(temp);
 				counter++;
 			}
 			cout << " Элемент находится на позиции: " << counter;
 			break;
 		case 32:
+			if (stk.get_it_top() == NULL) {
+				break;
+			}
 			temp = stk.get_it_top();
+			cout << "Элементы стэка: ";
 			while (temp != NULL) {
-				cout << "Элементы стэка: ";
-				cout << temp->data << " ";
-				temp = temp->next;
+				cout << stk.get_it_val(temp) << " ";
+				temp = stk.get_it_next(temp);
+			}
+			break;
+		case 33:
+			cout << "Сколько элементов вы хотите добавить? ";
+			cin >> stk_size;
+			cout << "Введите минимальное значение элемента: ";
+			cin >> rand_min;
+			cout << "Введите максимальное значение элемента: ";
+			cin >> rand_max;
+			distr = uniform_int_distribution<int>(rand_min, rand_max);
+			for (int i = 0; i < stk_size; i++)
+				stk.push(distr(gen));
+			break;
+		case 34:
+			if (stk.get_it_top() == NULL) {
+				break;
+			}
+			else
+			temp = stk.get_it_top();
+			cout << "Введите название файла: ";
+			cin >> file_name;
+			save_file.open(file_name);
+			while (temp != NULL) {
+				save_file << stk.get_it_val(temp) << " ";
+				temp = stk.get_it_next(temp);
+			}
+			save_file.close();
+			break;
+		case 35:
+			cout << "Введите название файла: ";
+			cin >> file_name;
+			load_file.open(file_name);
+			while (load_file >> data) {
+				stk.push(data);
 			}
 			break;
 		}
