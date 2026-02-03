@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #ifndef mystack_h
 #define mystack_h

@@ -1,4 +1,4 @@
-#include "mystack.h"
+ï»¿#include "mystack.h"
 
 void mystack::push(int data) {
 	node* temp = new node;
@@ -9,7 +9,7 @@ void mystack::push(int data) {
 
 void mystack::pop() {
 	if (top == NULL) {
-		cout << " Ñòýê óæå ïóñò";
+		cout << " Ð¡Ñ‚ÑÐº ÑƒÐ¶Ðµ Ð¿ÑƒÑÑ‚";
 	}
 	else {
 		node* temp = top;
@@ -20,7 +20,7 @@ void mystack::pop() {
 
 int mystack::get_top() {
 	if (top == NULL) {
-		cout << " Ñòýê ïóñò";
+		cout << " Ð¡Ñ‚ÑÐº Ð¿ÑƒÑÑ‚";
 		return -1;
 	}
 	return (top->data);
@@ -35,19 +35,19 @@ bool mystack::is_empty() {
 
 void mystack::clear_stk() {
 	if (top == NULL) {
-		cout << " Ñòýê óæå ïóñò";
+		cout << " Ð¡Ñ‚ÑÐº ÑƒÐ¶Ðµ Ð¿ÑƒÑÑ‚";
 	}
 	else {
 		while (top != NULL) {
 			pop();
 		}
-		cout << " Ñòýê î÷èùåí";
+		cout << " Ð¡Ñ‚ÑÐº Ð¾Ñ‡Ð¸Ñ‰ÐµÐ½";
 	}
 }
 
 node_it mystack::get_it_top() {
 	if (top == NULL) {
-		cout << " Ñòýê ïóñò";
+		cout << " Ð¡Ñ‚ÑÐº Ð¿ÑƒÑÑ‚";
 		return NULL;
 	}
 	else
@@ -58,7 +58,7 @@ node_it mystack::get_it_top() {
 }
 node_it mystack::get_it_first() {
 	if (top == NULL) {
-		cout << " Ñòýê ïóñò";
+		cout << " Ð¡Ñ‚ÑÐº Ð¿ÑƒÑÑ‚";
 		return NULL;
 	}
 	else {
